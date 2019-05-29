@@ -13,3 +13,6 @@ Class "Main" instantiates Class "ConnectDB" and calls it to setup database and c
 Class "Main" instantiates Class "ProcessCSVRecords" and calls it to separate records to successful or failed and write bad records to bad-data-timestamp.csv and return successful records
 Class "Main" instantiates "WriteRecordDB" and calls it to save successful records to database and return the number of successful records
 Class "Main" writes log statistics to log file
+
+NOTE
+Output files are not erased before or after each run. If you want new file, you delete the existing files in the main project folder
