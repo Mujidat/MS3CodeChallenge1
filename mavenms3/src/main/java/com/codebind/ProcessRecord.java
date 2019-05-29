@@ -49,6 +49,13 @@ public class ProcessRecord {
 			if ((StringUtils.isEmpty(lineRec.get(0)) )|| (StringUtils.isEmpty(lineRec.get(1)) )|| (StringUtils.isEmpty(lineRec.get(2)) )||(StringUtils.isEmpty(lineRec.get(3)) )||(StringUtils.isEmpty(lineRec.get(4)) )||(StringUtils.isEmpty(lineRec.get(5)) )
 					||(StringUtils.isEmpty(lineRec.get(6)) )||(StringUtils.isEmpty(lineRec.get(7)) )||(StringUtils.isEmpty(lineRec.get(8)) )||(StringUtils.isEmpty(lineRec.get(9)) ))
 				return null;
+			if ((lineRec.get(0).equalsIgnoreCase("A")) || (lineRec.get(1).equalsIgnoreCase("B")) || 
+					(lineRec.get(2).equalsIgnoreCase("C"))
+					|| (lineRec.get(3).equalsIgnoreCase("D")) || (lineRec.get(4).equalsIgnoreCase("E")) || 
+					(lineRec.get(5).equalsIgnoreCase("F")) || (lineRec.get(6).equalsIgnoreCase("G")) || 
+					(lineRec.get(7).equalsIgnoreCase("H")) || (lineRec.get(8).equalsIgnoreCase("I")) || 
+					(lineRec.get(9).equalsIgnoreCase("J")))
+				return null;
 			record.setA(lineRec.get(0));
 			record.setB(lineRec.get(1));
 			record.setC(lineRec.get(2));
@@ -66,86 +73,7 @@ public class ProcessRecord {
 			else if("false".equalsIgnoreCase(lineRec.get(8)))
 				record.setI(false);
 			record.setJ(lineRec.get(9));
-			//recordElement = lineRec.get(0);
-//			if(!StringUtils.isEmpty(recordElement)) {
-//				record.setA(recordElement);
-//			}
-//			else {
-//				return null;
-//			}
-//			recordElement = lineRec.get(1);
-//			if(!StringUtils.isEmpty(recordElement)) {
-//				record.setB(recordElement);
-//			}
-//			else {
-//				return null;
-//			}
-//			recordElement = lineRec.get(2);
-//			if(!StringUtils.isEmpty(recordElement)) {
-//				record.setC(recordElement);
-//			}
-//			else {
-//				return null;
-//			}
-//			recordElement = lineRec.get(3);
-//			if(!StringUtils.isEmpty(recordElement)) {
-//				record.setD(recordElement);
-//			}
-//			else {
-//				return null;
-//			}
-//			recordElement = lineRec.get(4);
-//			if(!StringUtils.isEmpty(recordElement)) {
-//				record.setE(recordElement);
-//			}
-//			else {
-//				return null;
-//			}
-//			recordElement = lineRec.get(5);
-//			if(!StringUtils.isEmpty(recordElement)) {
-//				record.setF(recordElement);
-//			}
-//			else {
-//				return null;
-//			}
-//			recordElement = lineRec.get(6);
-//			if(!StringUtils.isEmpty(recordElement)) {
-//				record.setG(recordElement);
-//			}
-//			else {
-//				return null;
-//			}
-//			recordElement = lineRec.get(7);
-//			if(!StringUtils.isEmpty(recordElement)) {
-//				if("true".equalsIgnoreCase(recordElement))
-//					record.setH(true);
-//				else if("false".equalsIgnoreCase(recordElement))
-//					record.setH(false);
-//				else
-//					return null;
-//			}
-//			else {
-//				return null;
-//			}
-//			recordElement = lineRec.get(8);
-//			if(!StringUtils.isEmpty(recordElement)) {
-//				if("true".equalsIgnoreCase(recordElement))
-//					record.setI(true);
-//				else if("false".equalsIgnoreCase(recordElement))
-//					record.setH(false);
-//				else
-//					return null;
-//			}
-//			else {
-//				return null;
-//			}
-//			recordElement = lineRec.get(9);
-//			if(!StringUtils.isEmpty(recordElement)) {
-//				record.setJ(recordElement);
-//			}
-//			else {
-//				return null;
-//			}
+			
 		return record;
 		}
 		return null;
