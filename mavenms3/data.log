@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-05-29T15:58:36</date>
+  <millis>1559159916319</millis>
+  <sequence>0</sequence>
+  <logger>com.codebind.Main</logger>
+  <level>INFO</level>
+  <class>com.codebind.WriteLog</class>
+  <method>writeLog</method>
+  <thread>1</thread>
+  <message>Number of records received in csvfile was 6002 number of records successful was 0 number of records failed was 6002</message>
+</record>
+</log>

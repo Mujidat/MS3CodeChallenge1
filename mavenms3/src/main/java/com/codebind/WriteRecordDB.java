@@ -7,17 +7,17 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class WriteRecordDB {
-	public static int insertRecord(List<LineRecord> correctFileElements) {
+	public int insertRecord(List<LineRecord> correctFileElements) throws SQLException {
         int succeed = 0;
         String url = "jdbc:sqlite:test.db";
         String sql = "INSERT INTO csvFileRecord(A,B,C,D,E,F,G,H,I,J) VALUES(?,?, ?,?, ?,?,?,?,?,?)";
 
-        try (Connection conn = DriverManager.getConnection(url);
-                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+         Connection conn = DriverManager.getConnection(url);
+                PreparedStatement pstmt = conn.prepareStatement(sql);
           //  System.out.println("total number of records is " + fileElements.size());
-            for (int m = 1; m < correctFileElements.size(); m++) {
+            for (int m = 0; m < correctFileElements.size(); m++) {
                 // write to database
-            	conn.setAutoCommit(false);
+            		//conn.setAutoCommit(false);
                     
                     pstmt.setString(1, correctFileElements.get(m).getA());
                     pstmt.setString(2, correctFileElements.get(m).getB());
@@ -31,14 +31,15 @@ public class WriteRecordDB {
                     pstmt.setString(10, correctFileElements.get(m).getJ());
                     pstmt.executeUpdate();
                     succeed += 1;
+                    System.out.println("Records Inserted" + succeed + " " + correctFileElements.get(m).getB());
             }
+            
+         //   conn.commit();
+        //    conn.close();
             System.out.println("Records Inserted");
-            conn.commit();
-            conn.close();
-            System.out.println("Records Inserted");
-        } catch (SQLException msg) {
-            System.out.println(msg.getMessage());
-        }
+//        } catch (SQLException msg) {
+//            System.out.println(msg.getMessage());
+//        }
         return succeed;
     }
 }

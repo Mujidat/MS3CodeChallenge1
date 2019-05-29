@@ -17,10 +17,12 @@ public class ReadCSVFile {
 	            reader = new CSVReader(new FileReader(csvFile));
 	            String[] line;
 	            line = reader.readNext(); //skip header line
-	            while ((line = reader.readNext()) != null) {	              
+	            while ((line = reader.readNext()) != null) {
+	            	if(!(line.equals("A,B,C,D,E,F,G,H,I,J"))) {
 	            	fileLines.add(Arrays.asList(line));
 	            	//System.out.println("Line " + rcvd + "contains " +fileLines.get(rcvd).size());
 	            	rcvd+=1;
+	            	}
 	            }
 	        } catch (IOException e) {
 	            e.printStackTrace();

@@ -24,11 +24,9 @@ public class ConnectDB {
         try {
             Class.forName("org.sqlite.JDBC");
             c = DriverManager.getConnection("jdbc:sqlite:test.db");
-            System.out.println("Opened database successfully");
             stmt = c.createStatement();
             String sql = "CREATE TABLE IF NOT EXISTS csvFileRecord (A,B,C,D,E,F,G,H,I,J)";
             stmt.executeUpdate(sql);
-            System.out.println("Table created successfully");
             stmt.close();
             c.close();
         } catch (Exception e) {
